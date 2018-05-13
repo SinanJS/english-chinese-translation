@@ -1,0 +1,58 @@
+{
+    "name": "english-chinese-translation",
+    "displayName": "English-Chinese Translation",
+    "description": "translate english to chinese",
+    "version": "0.0.1",
+    "publisher": "zpc",
+    "engines": {
+        "vscode": "^1.23.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.translate"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "keybindings": [
+            {
+                "command": "extension.translate",
+                "key": "ctrl+shift+r",
+                "mac": "cmd+shift+r",
+                "when": "editorTextFocus"
+            }
+        ],
+        "commands": [
+            {
+                "command": "extension.translate",
+                "title": "翻译"
+            }
+        ],
+        "menus": {
+            "editor/context": [{
+                "when": "editorHasSelection",
+                "command": "extension.translate",
+                "alt": "extension.translate",
+                "group": "1_modification"
+            }]
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "tslint": "^5.8.0",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"
+    },
+    "dependencies": {
+        "@types/request": "^2.47.0"
+    }
+}
