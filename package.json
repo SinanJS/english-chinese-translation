@@ -1,7 +1,7 @@
 {
     "name": "english-chinese-translation",
     "displayName": "English-Chinese Translation",
-    "description": "translate english to chinese",
+    "description": "translate english to chinese in vscode",
     "version": "0.0.1",
     "publisher": "zpc",
     "engines": {
